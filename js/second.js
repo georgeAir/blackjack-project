@@ -6,7 +6,7 @@ let deck = [2,3,4,5,6,7,8,9,10,10,10,10,11,
             2,3,4,5,6,7,8,9,10,10,10,10,11,
             2,3,4,5,6,7,8,9,10,10,10,10,11];
 
-let bank = 500
+let wallet = 500
 let playersHand
 let dealersHand
 
@@ -147,6 +147,8 @@ function compareHands(){
   if (handValue(playersHand) <= 21 && handValue(playersHand) > handValue(dealersHand)){
     console.log('Player wins!');
     alert('Player wins!')
+    wallet += 5
+    console.log(wallet);
   }else if (handValue(dealersHand)<= 21 && handValue(dealersHand) > handValue(playersHand)) {
     console.log('Dealer wins!');
     alert('Dealer wins!')
