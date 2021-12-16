@@ -71,8 +71,8 @@ function startGame(){
       wallet += 10
   } else if (handValue(dealersHand)===21){
     console.log('21! Dealer wins on the draw!');
-    alert(' 21! Dealer wins on the draw!');
-  }
+    commentary.innerText = " 21! Dealer wins on the draw!"
+    }
 
   // if(handValue(playersHand) >= 17 || handValue(playersHand) <= 20){
   //   dealerHit()
@@ -106,12 +106,11 @@ function hit (){
   walletAmount.innerText = wallet
   if (handValue(playersHand) === 21){
     console.log('21! player wins!');
-    alert('21! player wins!');
+    commentary.innerText = "21! player wins!"
     wallet += 10
   }else if(handValue(playersHand) > 21){
     console.log('Player BUSTS!');
-    alert('Player BUSTS!');
-
+    commentary.innerText = "Player Busts!"
     // dealerSide.innerText = dealersHand
     // playerSide.innerText = playersHand
     //
@@ -137,11 +136,10 @@ function dealerHit (){
   console.log(`Dealer's hand value: ` + handValue(dealersHand));
   if (handValue(dealersHand) === 21){
     console.log('21! dealer wins!');
-    alert('21! Dealer wins!')
-
+    commentary.innerText = "21! Dealer wins!"
   }else if(handValue(dealersHand) > 21){
     console.log('DEALER BUSTS!');
-    alert('DEALER BUSTS!')
+    commentary.innerText = "DEALER BUSTS!"
     wallet += 10
 
     // dealerSide.innerText = dealersHand
@@ -182,13 +180,12 @@ stand()
 function compareHands(){
   if (handValue(playersHand) <= 21 && handValue(playersHand) > handValue(dealersHand)){
     console.log('Player wins!');
-    alert('Player wins!')
+    commentary.innerText = "Player Wins!"
     wallet += 10
     console.log(wallet);
   }else if (handValue(dealersHand)<= 21 && handValue(dealersHand) > handValue(playersHand)) {
     console.log('Dealer wins!');
-    alert('Dealer wins!')
-
+    commentary.innerText = "Dealer Wins!"
   }
 }
 /////////////// Check for 21  ///////////////

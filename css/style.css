@@ -7,6 +7,7 @@ body{
 
 #icons{
   position: absolute;
+  border-radius: 5%;
   background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   width: 50%;
   height: 15%;
@@ -22,7 +23,7 @@ h1{
   justify-content: center;
   align-items: center;
   text-decoration: underline;
-  top: 0px;
+  top: -10px;
 }
 .commentary{
   position: fixed;
@@ -35,6 +36,7 @@ h1{
 
 .dealerSide{
   position: relative;
+  border-radius: 10%;
   height: 200px;
   width: 200px;
   background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
@@ -43,6 +45,7 @@ h1{
 }
 .playerSide{
   position: relative;
+  border-radius: 10%;
   height: 200px;
   width: 200px;
   background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
@@ -61,6 +64,7 @@ h3{
 .walletDiv{
   background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   position: fixed;
+  border-radius: 20%;
   height: 200px;
   width: 200px;
   bottom: 0;
@@ -77,6 +81,7 @@ h3{
 
 .buttons{
   position: absolute;
+  border-radius: 20%;
   bottom: 0;
   height: 30%;
   width: 20%;
