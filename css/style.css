@@ -16,6 +16,7 @@ body{
 }
 
 h1{
+  font-style: italic;
   position: relative;
   color: white;
   font-size: 60px;
@@ -24,7 +25,22 @@ h1{
   align-items: center;
   text-decoration: underline;
   top: -10px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
 }
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .commentary{
   position: fixed;
   font-size: 40px;
@@ -56,10 +72,12 @@ h2{
   color: white;
   text-align: center;
   text-decoration: underline;
+  font-size: 30px;
 }
 h3{
-  color: white;
+  color: gold;
   text-align: center;
+  font-size: 30px
 }
 .walletDiv{
   background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");

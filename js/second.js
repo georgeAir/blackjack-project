@@ -40,6 +40,9 @@ function dealHands(){
   wallet -= 5
   playersHand =[drawCards(deck) , drawCards(deck)]
   dealersHand =[drawCards(deck), drawCards(deck)]
+  if (playersHand || dealersHand ){
+
+  }
   console.log('Your cards are '+ playersHand);
   console.log(`Your hand value: ` + handValue(playersHand));
   console.log(`Dealer's cards are `+ dealersHand);
