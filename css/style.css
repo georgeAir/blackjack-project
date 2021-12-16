@@ -1,5 +1,5 @@
 body{
-  background-image: url("https://m.media-amazon.com/images/I/51BMFuBVHLL._AC_SX425_.jpg");
+  background-image: url("https://i.makeagif.com/media/12-15-2020/jdHdK9.gif");
   background-size: cover;
 
 
@@ -7,10 +7,11 @@ body{
 
 #icons{
   position: absolute;
-  background-color: black;
-  width: 100%;
+  background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
+  width: 50%;
   height: 15%;
   top: 0px;
+  right: 25%;
 }
 
 h1{
@@ -23,11 +24,20 @@ h1{
   text-decoration: underline;
   top: 0px;
 }
+.commentary{
+  position: fixed;
+  font-size: 40px;
+  height: 200px;
+  width: 200px;
+  top: 30%;
+  left: 5%;
+}
+
 .dealerSide{
   position: relative;
   height: 200px;
   width: 200px;
-  background-color: black;
+  background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   top: 150px;
   left: 600px;
 }
@@ -35,7 +45,7 @@ h1{
   position: relative;
   height: 200px;
   width: 200px;
-  background-color: black;
+  background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   top: 300px;
   left: 600px;
 }
@@ -49,7 +59,7 @@ h3{
   text-align: center;
 }
 .walletDiv{
-  background-color: black;
+  background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   position: fixed;
   height: 200px;
   width: 200px;
@@ -67,9 +77,10 @@ h3{
 
 .buttons{
   position: absolute;
-  height: 60%;
+  bottom: 0;
+  height: 30%;
   width: 20%;
-  background-color: black;
+  background-image: url("https://static4.depositphotos.com/1004032/356/i/600/depositphotos_3569679-stock-photo-poker-table-felt-background.jpg");
   display: block;
 
 }
