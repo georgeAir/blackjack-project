@@ -10,7 +10,7 @@ let bank = 500
 let playersHand
 let dealersHand
 
-const startButton = document.querySelector('.start')
+const startButton = document.querySelector('#start')
 const hitButton = document.querySelector('#hit')
 const stayButton = document.querySelector('#stay')
 
@@ -53,17 +53,19 @@ function handValue(hand){
 // console.log();
 
 /////////////////////// Start game function  ///////////////////////////////
-startButton.addEventListener('click', (event) => {
-console.log('click');
- // startGame()
-
-})
+// startButton.addEventListener('click', (event) => {
+// console.log('click');
+//  // startGame()
+//
+// })
 function startGame(){
   dealHands()
   if (handValue(playersHand)=== 21){
+      console.log('21! Player wins on the draw!');
       alert('21! Player wins on the draw!');
   } else if (handValue(dealersHand)===21){
-    alert(' 21!Dealer wins on the draw!');
+    console.log('21! Dealer wins on the draw!');
+    alert(' 21! Dealer wins on the draw!');
   }
 
   // if(handValue(playersHand) >= 17 || handValue(playersHand) <= 20){
@@ -91,8 +93,10 @@ function hit (){
   console.log(`Your hand value: ` + handValue(playersHand));
   if (handValue(playersHand) === 21){
     console.log('21! player wins!');
+    alert('21! player wins!');
   }else if(handValue(playersHand) > 21){
-    console.log('BUST!');
+    console.log('Player BUSTS!');
+    alert('Player BUSTS!');
 
     dealerSide.innerText = dealersHand
     playerSide.innerText = playersHand
@@ -108,8 +112,10 @@ function dealerHit (){
   console.log(`Dealer's hand value: ` + handValue(dealersHand));
   if (handValue(dealersHand) === 21){
     console.log('21! dealer wins!');
+    alert('21! Dealer wins!')
   }else if(handValue(dealersHand) > 21){
     console.log('DEALER BUSTS!');
+    alert('DEALER BUSTS!')
 
     dealerSide.innerText = dealersHand
     playerSide.innerText = playersHand
@@ -125,7 +131,7 @@ hit()
 
 /////////////// STAND BUTTON  AND COMPARE HANDS ///////////////
 function stand(){
-  if(handValue(playersHand) <= 17 || handValue(playersHand) <= 20 || handValue(dealersHand)=== handValue(playersHand)){
+  if(handValue(playersHand) >= 12 || handValue(playersHand) <= 20 || handValue(dealersHand)=== handValue(playersHand)){
     dealerHit()
   }
     compareHands()
@@ -138,11 +144,13 @@ stand()
 
 /////////////// Comparing Hands  ///////////////
 function compareHands(){
-  if (handValue(playersHand) <= 21 && handValue(playersHand) < handValue(dealersHand)){
+  if (handValue(playersHand) <= 21 && handValue(playersHand) > handValue(dealersHand)){
     console.log('Player wins!');
-  }else if (handValue(dealersHand)<= 21 && handValue(dealersHand) < handValue(playersHand)) {
- console.log('Dealer wins!');
-}
+    alert('Player wins!')
+  }else if (handValue(dealersHand)<= 21 && handValue(dealersHand) > handValue(playersHand)) {
+    console.log('Dealer wins!');
+    alert('Dealer wins!')
+  }
 }
 /////////////// Check for 21  ///////////////
 function checkFor21 (){
@@ -159,3 +167,13 @@ playerSide.innerText = playersHand
 
 dealersValue.innerText= handValue(dealersHand)
 playersValue.innerText= handValue(playersHand)
+
+startButton.addEventListener('click', (event) => {
+console.log('click');
+dealHands()
+dealerSide.innerText = dealersHand
+playerSide.innerText = playersHand
+
+dealersValue.innerText= handValue(dealersHand)
+playersValue.innerText= handValue(playersHand)
+})
