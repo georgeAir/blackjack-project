@@ -40,6 +40,7 @@ function dealHands(){
   wallet -= 5
   playersHand =[drawCards(deck) , drawCards(deck)]
   dealersHand =[drawCards(deck), drawCards(deck)]
+  checkFor21()
   console.log('Your cards are '+ playersHand);
   console.log(`Your hand value: ` + handValue(playersHand));
   console.log(`Dealer's cards are `+ dealersHand);
@@ -74,9 +75,9 @@ function startGame(){
     commentary.innerText = " 21! Dealer wins on the draw!"
     }
 
-  // if(handValue(playersHand) >= 17 || handValue(playersHand) <= 20){
-  //   dealerHit()
-  // }
+    if (wallet === 0){
+      alert('GAME OVER!')
+    }
 }
 
 startGame()
@@ -193,13 +194,16 @@ function compareHands(){
   }
 }
 /////////////// Check for 21  ///////////////
-// function checkFor21 (){
-//   if (handValue(playersHand) === 21){
-//     console.log('player wins');
-//   }else if (handValue(dealersHand)=== 21){
-//     console.log('dealer wins');
-//   }
-// }
+function checkFor21 (){
+  if (handValue(playersHand) === 21){
+    console.log('player wins');
+    commentary.innerText = "21! Player wins on the draw!"
+    wallet += 10
+  }else if (handValue(dealersHand)=== 21){
+    console.log('dealer wins');
+    commentary.innerText = "21! Dealer wins on the draw!"
+  }
+}
 //////////////// ACCESSING THE DOM ////////////////
 
 dealerSide.innerText = dealersHand
