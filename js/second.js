@@ -38,14 +38,16 @@ console.log(drawCards(deck));
 /////////////////////// Player And Dealers Funtion //////////////////////////////
 function dealHands(){
   wallet -= 5
+  if (wallet === 0){
+    alert('GAME OVER!')
+  }
+  commentary.innerText = ""
   playersHand =[drawCards(deck) , drawCards(deck)]
   dealersHand =[drawCards(deck), drawCards(deck)]
-  checkFor21()
   console.log('Your cards are '+ playersHand);
   console.log(`Your hand value: ` + handValue(playersHand));
   console.log(`Dealer's cards are `+ dealersHand);
   console.log(`Dealer's hand value: ` + handValue(dealersHand));
-// compareHands()
 }
 // start()
 /////////////////////// Hand value Function  ///////////////////////////////
@@ -59,11 +61,7 @@ function handValue(hand){
 // console.log();
 
 /////////////////////// Start game function  ///////////////////////////////
-// startButton.addEventListener('click', (event) => {
-// console.log('click');
-//  // startGame()
-//
-// })
+
 function startGame(){
   dealHands()
   if (handValue(playersHand)=== 21){
@@ -74,17 +72,10 @@ function startGame(){
     console.log('21! Dealer wins on the draw!');
     commentary.innerText = " 21! Dealer wins on the draw!"
     }
-
-    if (wallet === 0){
-      alert('GAME OVER!')
-    }
 }
 
 startGame()
-// console.log('Your cards are '+ playersHand);
-// console.log(`Your hand value: ` + handValue(playersHand));
-// console.log(`Dealer's cards are `+ dealersHand);
-// console.log(`Dealer's hand value: ` + handValue(dealersHand));
+
 
 dealerSide.innerText = dealersHand
 playerSide.innerText = playersHand
@@ -112,12 +103,6 @@ function hit (){
   }else if(handValue(playersHand) > 21){
     console.log('Player BUSTS!');
     commentary.innerText = "Player Busts!"
-    // dealerSide.innerText = dealersHand
-    // playerSide.innerText = playersHand
-    //
-    // dealersValue.innerText= handValue(dealersHand)
-    // playersValue.innerText= handValue(playersHand)
-    // walletAmount.innerText = wallet
 
   }
 }
@@ -143,13 +128,7 @@ function dealerHit (){
     commentary.innerText = "DEALER BUSTS!"
     wallet += 10
 
-    // dealerSide.innerText = dealersHand
-    // playerSide.innerText = playersHand
-    //
-    // dealersValue.innerText= handValue(dealersHand)
-    // playersValue.innerText= handValue(playersHand)
-    //
-    // walletAmount.innerText = wallet
+
 
   }
   dealerSide.innerText = dealersHand
@@ -170,12 +149,10 @@ function stand(){
   if (handValue(playersHand) >= 12 && handValue(playersHand) <= 20 || handValue(dealersHand) <= handValue(playersHand)){
     dealerHit()
   }
-  // dealerHit()
   compareHands()
 }
 
 stayButton.addEventListener('click', (event) => {
-// console.log('click');
 stand()
 })
 
@@ -217,6 +194,7 @@ walletAmount.innerText = wallet
 
 dealButton.addEventListener('click', (event) => {
 dealHands()
+checkFor21()
 dealerSide.innerText = dealersHand
 playerSide.innerText = playersHand
 
@@ -224,8 +202,6 @@ dealersValue.innerText= handValue(dealersHand)
 playersValue.innerText= handValue(playersHand)
 
 walletAmount.innerText = wallet
-setTimeout(() => {
-  commentary.innerText = ""
-}, 000)
+
 
 })
