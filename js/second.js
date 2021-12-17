@@ -120,6 +120,9 @@ function dealerHit (){
   walletAmount.innerText = wallet
   console.log(`Dealer's new hand: ` + dealersHand);
   console.log(`Dealer's hand value: ` + handValue(dealersHand));
+  if (handValue(dealersHand) <= handValue(playersHand)){
+    dealersHand.push(drawCards(deck))
+  }
   if (handValue(dealersHand) === 21){
     console.log('21! dealer wins!');
     commentary.innerText = "21! Dealer wins!"
