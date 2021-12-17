@@ -146,7 +146,7 @@ hit()
 
 /////////////// STAND BUTTON  AND COMPARE HANDS ///////////////
 function stand(){
-  if (handValue(playersHand) >= 12 && handValue(playersHand) <= 20 || handValue(dealersHand) <= handValue(playersHand)){
+  if (handValue(playersHand) >= 12 && handValue(playersHand) <= 18 || handValue(dealersHand) <= handValue(playersHand)){
     dealerHit()
   }
   compareHands()
