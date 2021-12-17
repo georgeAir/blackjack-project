@@ -142,12 +142,15 @@ function dealerHit (){
 
   walletAmount.innerText = wallet
 }
-hitButton.addEventListener('click', (event) => {
 
+
+/////////////// HIT BUTTON   ///////////////
+
+hitButton.addEventListener('click', (event) => {
 hit()
 })
 
-/////////////// STAND BUTTON  AND COMPARE HANDS ///////////////
+/////////////// STAY BUTTON  AND COMPARE HANDS ///////////////
 function stand(){
   if (handValue(playersHand) >= 12 && handValue(playersHand) <= 18 || handValue(dealersHand) <= handValue(playersHand)){
     dealerHit()
