@@ -16,15 +16,15 @@ body{
 }
 
 h1{
-  font-style: italic;
+  font-family:'Luxurious Script', cursive;
   position: relative;
   color: white;
-  font-size: 60px;
+  font-size: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: underline;
-  top: -10px;
+  top: -40px;
   animation-duration: 3s;
   animation-name: slidein;
   animation-iteration-count: 1;
@@ -48,7 +48,20 @@ h1{
   width: 200px;
   top: 30%;
   left: 5%;
+  animation: bounce 1.5s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+            animation-iteration-count: infinite;
+        }
+
+@keyframes bounce {
+  from {
+  transform: translate3d(0, 0, 0);
 }
+  to {
+    transform: translate3d(0, 200px, 0);
+    }
+  }
 
 .dealerSide{
   position: relative;
@@ -75,7 +88,7 @@ h2{
   font-size: 30px;
 }
 h3{
-  color: gold;
+  color: white;
   text-align: center;
   font-size: 30px
 }
@@ -90,7 +103,8 @@ h3{
 }
 .start{
   position: relative;
-  background-color: white;
+  background-color: maroon;
+  color: white;
   border-radius: 100px;
   width:30%;
   height: 30%;
@@ -111,34 +125,20 @@ h3{
 
 #hit{
   position: relative;
-  background-color: white;
+  background-color: maroon;
+  color: white;
   border-radius: 100px;
   width:30%;
   height: 30%;
   top: 40px;
 }
 
-#lower{
-  position: relative;
-  background-color: white;
-  border-radius: 100px;
-  width:30%;
-  height: 30%;
-  top: 40px;
-}
 
-#raise {
-  position: relative;
-  background-color: white;
-  border-radius: 100px;
-  width:30%;
-  height: 30%;
-  top: 40px;
-}
 
 #stay {
   position: relative;
-  background-color: white;
+  background-color: maroon;
+  color: white;
   border-radius: 100px;
   width:30%;
   height: 30%;

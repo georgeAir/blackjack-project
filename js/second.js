@@ -40,9 +40,6 @@ function dealHands(){
   wallet -= 5
   playersHand =[drawCards(deck) , drawCards(deck)]
   dealersHand =[drawCards(deck), drawCards(deck)]
-  if (playersHand || dealersHand ){
-
-  }
   console.log('Your cards are '+ playersHand);
   console.log(`Your hand value: ` + handValue(playersHand));
   console.log(`Dealer's cards are `+ dealersHand);
@@ -163,15 +160,17 @@ function dealerHit (){
   walletAmount.innerText = wallet
 }
 hitButton.addEventListener('click', (event) => {
+
 hit()
 })
 
 /////////////// STAND BUTTON  AND COMPARE HANDS ///////////////
 function stand(){
-  if(handValue(playersHand) >= 12 || handValue(playersHand) <= 20 || handValue(dealersHand)=== handValue(playersHand)){
+  if (handValue(playersHand) >= 12 && handValue(playersHand) <= 20 || handValue(dealersHand) <= handValue(playersHand)){
     dealerHit()
   }
-    compareHands()
+  // dealerHit()
+  compareHands()
 }
 
 stayButton.addEventListener('click', (event) => {
@@ -181,7 +180,9 @@ stand()
 
 /////////////// Comparing Hands  ///////////////
 function compareHands(){
-  if (handValue(playersHand) <= 21 && handValue(playersHand) > handValue(dealersHand)){
+  if (handValue(dealersHand) < handValue(playersHand)|| handValue(dealersHand) <= handValue(playersHand)){
+    dealerHit()
+  }else if (handValue(playersHand) <= 21 && handValue(playersHand) > handValue(dealersHand)){
     console.log('Player wins!');
     commentary.innerText = "Player Wins!"
     wallet += 10
@@ -219,5 +220,8 @@ dealersValue.innerText= handValue(dealersHand)
 playersValue.innerText= handValue(playersHand)
 
 walletAmount.innerText = wallet
+setTimeout(() => {
+  commentary.innerText = ""
+}, 000)
 
 })
